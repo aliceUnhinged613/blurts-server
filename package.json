@@ -32,14 +32,15 @@
     "isemail": "3.2.0",
     "knex": "0.19.5",
     "knex-paginate": "1.2.2",
-    "lodash": "4.17.19",
+    "lodash": "4.17.20",
     "mozlog": "3.0.1",
     "nodemailer": "4.7.0",
     "nodemailer-express-handlebars": "3.3.0",
     "npm-run-all": "4.1.5",
     "pg": "7.18.2",
     "sns-validator": "0.3.4",
-    "uuid": "3.4.0"
+    "uuid": "3.4.0",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@wdio/cli": "5.23.0",
@@ -133,7 +134,10 @@
     "test:integration-headless": "MOZ_HEADLESS=1 wdio tests/integration/wdio.conf.js",
     "test:integration-headless-ci": "MOZ_HEADLESS=1 ERROR_SHOTS=1 wdio tests/integration/wdio.conf.js",
     "test:integration-docker": "MOZ_HEADLESS=1 wdio tests/integration/wdio.docker.js",
-    "test": "run-s test:db:migrate test:tests test:coveralls"
+    "test": "run-s test:db:migrate test:tests test:coveralls",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
-  "supportedLocales": "cak,cs,cy,da,de,el,en,en-CA,en-GB,es-AR,es-CL,es-ES,es-MX,fi,fr,fy-NL,gn,hu,kab,ia,id,it,ja,nb-NO,nl,nn-NO,pt-BR,pt-PT,ro,ru,sk,sl,sq,sv-SE,tr,uk,vi,zh-CN,zh-TW"
+  "supportedLocales": "cak,cs,cy,da,de,el,en,en-CA,en-GB,es-AR,es-CL,es-ES,es-MX,fi,fr,fy-NL,gn,hu,kab,ia,id,it,ja,nb-NO,nl,nn-NO,pt-BR,pt-PT,ro,ru,sk,sl,sq,sv-SE,tr,uk,vi,zh-CN,zh-TW",
+  "snyk": true
 }
